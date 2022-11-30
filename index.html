@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Toss</title>
+</head>
+<body>
+    <h1>Toss</h1>
+    
+    <button>Head</button>
+    <button>Tail</button>
+    <div class="output"></div>
+
+  <script>
+    let btns=document.querySelectorAll("button")
+    let output=document.querySelector(".output")
+    for(let t of btns){
+        t.addEventListener("click",()=>{toss(t.innerText)})
+    }
+    let playerScore=0
+    let deviceScore=0
+
+    function toss(userChoice){
+        let choices= ["Head","Tail"]
+        let random=parseInt(Math.random()*choices.length)
+        tossValue=choices[random]
+
+        tossValue==userChoice? playerScore++ : deviceScore++
+         
+        output.innerText=`Player Score: ${playerScore} and device Score ${deviceScore}`
+ 
+    }
+
+
+
+
+
+
+  </script>
+    
+</body>
+</html>
